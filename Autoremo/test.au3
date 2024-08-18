@@ -1,11 +1,7 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Icon=..\..\..\..\Downloads\discord_icon_130958.ico
-#AutoIt3Wrapper_Outfile=Discord.exe
+#AutoIt3Wrapper_Outfile=Filename.exe
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
-
-	;Global $iBase = 0x00400000, $iStaticoffset = 0x007F1708
-;Global $tileXOffset[5] = [0xC,0xA4,0xAC,0x38,0x73C] ; Offset específico para X
-;Global $tileYOffset[7] = [0xC,0xA4,0xE8,0x8,0xAC,0x38,0x248] ; Offset específico para Y
 
 #include <MemoryConstants.au3>
 #include <NomadMemory.au3>
@@ -162,7 +158,7 @@ Func _Pointer()
 			$finalpos[0] = $inicioPos[0] + $distancias[0]
 			$finalpos[1] = $inicioPos[1] + $distancias[1]
 
-			; Mover el mouse a la posición final, simula el movimiento a lo largo de la hipotenusa
+			; Mover el mouse a la posiciÃ³n final, simula el movimiento a lo largo de la hipotenusa
 ;~ 			MouseMove($finalPos[0], $finalPos[1],0)
 			MouseClick("left", $finalPos[0], $finalPos[1], 1 ,0)
 		EndIf
@@ -175,17 +171,17 @@ Func _Pointer()
 EndFunc
 
 Func CalcularDistancia($tileX1, $tileY1, $tileX2, $tileY2)
-    ; Cada tile tiene 32 píxeles de ancho y alto
+    ; Cada tile tiene 32 pÃ­xeles de ancho y alto
     Local $tamanoTile = 32
 
     ; Calcula la diferencia en tiles
     Local $deltaTileX = $tileX2 - $tileX1
     Local $deltaTileY = $tileY2 - $tileY1
 
-    ; Convierte la diferencia de tiles a píxeles multiplicando por el tamaño de cada tile
+    ; Convierte la diferencia de tiles a pÃ­xeles multiplicando por el tamaÃ±o de cada tile
     Local $distancias[2]
-    $distancias[0] = $deltaTileX * $tamanoTile  ; Distancia en píxeles en X
-    $distancias[1] = $deltaTileY * $tamanoTile  ; Distancia en píxeles en Y
+    $distancias[0] = $deltaTileX * $tamanoTile  ; Distancia en pÃ­xeles en X
+    $distancias[1] = $deltaTileY * $tamanoTile  ; Distancia en pÃ­xeles en Y
 
     Return $distancias
 EndFunc
