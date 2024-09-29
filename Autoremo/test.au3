@@ -67,7 +67,7 @@ Func _Pointer()
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	; Abrir el proceso para la lectura de memoria
-    $hOpen = _MemoryOpen(ProcessExists("ImperiumClassic.exe"))
+    $hOpen = _MemoryOpen(ProcessExists("your game.exe"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
